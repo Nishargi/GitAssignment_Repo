@@ -1,0 +1,103 @@
+(1) Create a local repository and add 3 files into it$ notepad sample.txt
+
+$ mkdir Nishargi-Git-Assignment
+$ cd Nishargi-Git-Assignment
+$ notepad sample.txt
+$ cat sample.txt
+Initial Commit To Create Master Branch
+
+$ notepad File1.txt
+$ notepad File2.txt
+$ notepad File3.txt
+$ cat File1.txt
+Nishargi - Text File 1
+$ cat File2.txt
+Nishargi - Text File 2
+$ cat File3.txt
+Nishargi - Text File 3
+$ git init
+Initialized empty Git repository 
+
+(2) Create 2 braches as Dev and Test.
+$ git branch
+(No branch is listed)
+$ git add sample.txt
+$ git commit -m "Intial Commit T0 Create Master Branch"
+$ git branch - to list all branches 
+(Now Master branch is listed)
+
+$ git branch Dev
+$ git branch Test
+$ git branch
+  Dev
+  Test
+* master
+
+
+(3) Commit 1 file into Dev and 2 files into Test.
+
+$ git checkout Dev
+Switched to branch 'Dev'
+$ ls
+File1.txt  File2.txt  File3.txt  sample.txt
+$ git add File1.txt
+$ git commit -m "File1.txt Added To Dev Branch"
+[Dev 8faf1ab] File1.txt Added To Dev Branch
+ 1 file changed, 1 insertion(+)
+ create mode 100644 File1.txt
+
+$ git checkout Test
+Switched to branch 'Test'
+$ git add File2.txt
+$ git add File3.txt
+$ git commit -m "File2.txt and File3.txt Added To Test Branch"
+
+
+(4) Modify 1st file some text.
+
+$ git checkout Dev
+Switched to branch 'Dev'
+$ notepad File1.txt
+(Changed some text in this file)
+$ cat File1.txt
+Nishargi Shah - Text File 1
+
+$ git add File1.txt
+$ git commit -m "Modified File1.txt"
+[Dev 88ea986] Modified File1.txt
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+(5) Check differences and status.
+$ git log
+$ git status
+
+(6) Finally merge all together in a master branch.
+
+$ git checkout master
+$ git merge Dev Test
+$ git log 
+(Commit Details of all the branches appeared)
+
+
+(7) Push this repository on your github.
+
+$ git remote add origin https://github.com/Nishargi/GitAssignment_Repo.git
+$ git push -u origin master
+
+(8) Create a clone for this repo from github to local system with another location.
+
+$ cd ..
+$ git clone https://github.com/Nishargi/GitAssignment_Repo.git
+
+
+(9) Create a new file as Solution.txt in this cloned repository and Add all commands you have done for above in this Solution.txt file.
+
+$ cd Nishargi-Git-Assignment
+$ notepad Solution.txt
+ 
+$ cat Solution.txt
+$ git add Solution.txt
+$ git commit -m "Added Solution.txt"
+
+(10) Push the changes to github again in same repository.
+git push -u origin master
